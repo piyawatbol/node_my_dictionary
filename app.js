@@ -7,8 +7,10 @@ const mongoose = require('mongoose');
 
 mongoose.Promise = global.Promise;
 
+mongoose.set("strictQuery", false);
+
 mongoose.connect('mongodb+srv://piyawat:1234@cluster0.92gccgo.mongodb.net/my-dictionary?retryWrites=true&w=majority')
-        .then(() => console.log('connection successfully!'))
+        .then(() => console.log('connection database successfully!'))
         .catch((err) => console.error(err))
 
 var indexRouter = require('./routes/index');
